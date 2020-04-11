@@ -1,4 +1,4 @@
-package glebkalinin.test.instagramclone.Fragments
+package glebkalinin.test.instagramclone.fragments
 
 
 import android.os.Bundle
