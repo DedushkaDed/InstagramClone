@@ -71,8 +71,8 @@ class SignUpActivity : AppCompatActivity() {
 
         val userMap = HashMap<String, Any>() //HashMap -> Загулил.
         userMap["uid"] = currentUserID
-        userMap["fullname"] = fullName
-        userMap["username"] = userName
+        userMap["fullname"] = fullName.toLowerCase()
+        userMap["username"] = userName.toLowerCase()
         userMap["email"] = email
         userMap["bio"] = "Привет! Я использую приложение Глеба Калинина!"
         userMap["image"] = "https://firebasestorage.googleapis.com/v0/b/instagramclone-7ba18.appspot.com/o/Default%20Images%2Fprofile.png?alt=media&token=9e83e426-d799-4246-8e59-769cb8b45fa0" // Дефолтная фотография для всех пользователей. Находится в FireBase storage.
