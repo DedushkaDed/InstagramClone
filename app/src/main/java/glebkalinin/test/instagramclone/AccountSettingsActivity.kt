@@ -81,7 +81,8 @@ class AccountSettingsActivity : AppCompatActivity() {
             val result = CropImage.getActivityResult(data)
             imageUri = result.uri
             profile_image_view_profile_frag.setImageURI(imageUri)
-        } else {
+        }
+        else {
             Toast.makeText(this, "Ошибка,попробуйте снова!", Toast.LENGTH_LONG).show()
         }
 
@@ -178,8 +179,9 @@ class AccountSettingsActivity : AppCompatActivity() {
                 val fileref = storageProfilePictureReference!!.child(firebaseUser!!.uid + ".jpg") //  Обновление старой фотографии на новую. В этой переменной мы храним фотографию пользователя.
 
                 val uploadTask: StorageTask<*>
-                uploadTask = fileref.putFile(imageUri!!) // ->          !! - not null
+                uploadTask = fileref.putFile(imageUri!!)
                 // Continuation -> Метод Firebase
+
                 uploadTask.continueWithTask (Continuation <UploadTask.TaskSnapshot, Task<Uri>> { task ->
                     // Если !task.isSuccessful -> Не был выполнен. Throw error
                     if (!task.isSuccessful) {
